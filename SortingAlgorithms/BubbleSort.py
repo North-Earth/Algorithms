@@ -1,9 +1,9 @@
 def sortOut(collection):
-    steeps = frozenset(range(len(collection)))
-    for item in collection:
-        for steep in steeps:
-            if steep > 0:
-                if collection[steep - 1] > collection[steep]:
-                    collection.insert(steep, collection.pop(steep - 1))
+    idxs = frozenset(range(len(collection)))
+    for value in collection:
+        for idx in idxs:
+            if idx > 0:
+                if collection[idx - 1] > collection[idx]:
+                    collection.insert(idx, collection.pop(idx - 1))
     return collection
 
