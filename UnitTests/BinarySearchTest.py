@@ -1,15 +1,21 @@
 import unittest
-from Algorithms1.BinarySearch import BinarySearch as bs
+from Algorithms.BinarySearch import BinarySearch as bs
+
+# ~py -m UnitTests.BinarySearchTest
 
 class BinarySearchTest(unittest.TestCase):
 
     def test_serch(self):
         # Arrage
-        collection = [1, 3, 5, 7, 9, 11]
-        trueItem = 9
+        collection = range(0,10000,2)
+        trueItem = 450
+        fakeTrueResult = 225
+
         noneItem = -99
-        fakeTrueResult = 4
         fakeNoneResult = None
+
+        falseItem = 0
+        fakeFalseResult = 1
 
         # Act
         trueResult = bs.binary_search(self,collection, trueItem)
@@ -18,6 +24,7 @@ class BinarySearchTest(unittest.TestCase):
         # Assert
         self.assertEqual(fakeTrueResult, trueResult)
         self.assertEqual(fakeNoneResult, noneResult)
+        self.assertFalse(fakeFalseResult, falseItem)
 
 if __name__ == '__main__':
     unittest.main()
