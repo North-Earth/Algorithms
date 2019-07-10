@@ -3,11 +3,12 @@ from Algorithms.BinarySearch import BinarySearch as bs
 
 # ~py -m UnitTests.BinarySearchTest
 
+
 class BinarySearchTest(unittest.TestCase):
 
     def test_serch(self):
         # Arrage
-        collection = range(0,10000,2)
+        collection = range(0, 10000, 2)
         trueItem = 450
         fakeTrueResult = 225
 
@@ -18,13 +19,15 @@ class BinarySearchTest(unittest.TestCase):
         fakeFalseResult = 1
 
         # Act
-        trueResult = bs.binary_search(self,collection, trueItem)
-        noneResult = bs.binary_search(self,collection, noneItem)
+        trueResult = bs.binary_search(self, collection, trueItem)
+        noneResult = bs.binary_search(self, collection, noneItem)
+        falseResult = bs.binary_search(self, collection, falseItem)
 
         # Assert
         self.assertEqual(fakeTrueResult, trueResult)
         self.assertEqual(fakeNoneResult, noneResult)
-        self.assertFalse(fakeFalseResult, falseItem)
+        self.assertNotEqual(fakeFalseResult, falseResult)
+
 
 if __name__ == '__main__':
     unittest.main()
