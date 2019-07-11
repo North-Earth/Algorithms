@@ -1,7 +1,7 @@
 import unittest
 import time
-from Algorithms.BinarySearch import BinarySearch as bs
-from Algorithms.SimpleSearch import SimpleSearch as ss
+from Algorithms.SearchAlgorithms.BinarySearch import BinarySearch as bs
+from Algorithms.SearchAlgorithms.SimpleSearch import SimpleSearch as ss
 
 # ~py -m UnitTests.BinarySearchTest
 
