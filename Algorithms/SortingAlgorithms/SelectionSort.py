@@ -1,6 +1,6 @@
 # Алгоритм сортировки выбором.
 
-class SelectionSort():
+class SelectionSort:
 
     def find_smallest(self, arr):
         smallest = arr[0]
@@ -14,6 +14,9 @@ class SelectionSort():
     def selection_sort(self, arr):
         sortArr = []
         for idx in range(len(arr)):
-            smallest = self.find_smallest(arr)
+            smallest = self.find_smallest(self, arr)
             sortArr.append(arr.pop(smallest))
         return sortArr
+
+# result = SelectionSort().selection_sort([5,3,6,2,10])
+# print(result)
