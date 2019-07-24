@@ -16,3 +16,13 @@ class SortingAlgorithms():
             smallest = self.find_smallest(collection)
             sort_collection.append(collection.pop(smallest))
         return sort_collection
+
+    # Алгоритм быстрой сортировки.
+    def quick_sort(self, collection):
+        if len(collection) < 2: # Базовый случай.
+            return collection
+        else:                   # Рекурсивный случай.
+            pivot = collection[0]
+            less = [i for i in collection[1:] if i <= pivot]    # Подмассив элементов, меньше опорного.
+            greater = [i for i in collection[1:] if i > pivot]  # Подмассив элементов, больших опорного.
+            return self.quick_sort(less) + [pivot] + self.quick_sort(greater)
