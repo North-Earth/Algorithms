@@ -9,16 +9,16 @@ class RecursiveAlgorithms():
             return collection[idx] + self.sum_numbers(collection,idx)
 
     # Алгоритм нахождения факторила.
-    def factorial(x):
+    def factorial(self, x):
         if x <= 0:
             return 1
-        return x * factorial(x - 1)
+        return x * self.factorial(x - 1)
 
     # Алгоритм нахождения числа Фибоначчи.
-    def fibonacci(n):
+    def fibonacci(self, n):
         if n == 0:
             return 0
         elif n == 1:
             return 1
         else:
-            return fibonacci(n - 1) + fibonacci(n - 2)
+            return self.fibonacci(n - 1) + self.fibonacci(n - 2)
