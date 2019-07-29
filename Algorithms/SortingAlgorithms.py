@@ -1,3 +1,5 @@
+import random
+
 class SortingAlgorithms():
     # Поиск наименьшего элемента.
     def find_smallest(self, collection):
@@ -22,7 +24,9 @@ class SortingAlgorithms():
         if len(collection) < 2: # Базовый случай.
             return collection
         else:                   # Рекурсивный случай.
-            pivot = collection[0]
+            random_idx = random.randrange(0, len(collection))
+            pivot = collection[random_idx] # Если всегда выбирать опорным элементом случайный элемент в массиве, 
+                                           # бы­страя сортировка в среднем завершится за время О(п log п).
             less = [i for i in collection[1:] if i <= pivot]    # Подмассив элементов, меньше опорного.
             greater = [i for i in collection[1:] if i > pivot]  # Подмассив элементов, больших опорного.
             return self.quick_sort(less) + [pivot] + self.quick_sort(greater)
